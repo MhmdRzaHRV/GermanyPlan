@@ -1,6 +1,6 @@
 *{box-sizing:border-box}
 html{font-family:Tahoma,"Segoe UI",Arial,sans-serif}
-body{margin:0;background:#eef2f7;color:#202a24;font-family:Tahoma,"Segoe UI",Arial,sans-serif;direction:rtl}
+body{margin:0;overflow-x:hidden;background:#eef2f7;color:#202a24;font-family:Tahoma,"Segoe UI",Arial,sans-serif;direction:rtl}
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
 button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #4caf50;outline-offset:2px}

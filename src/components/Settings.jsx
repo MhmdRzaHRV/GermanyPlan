@@ -10,9 +10,5 @@ export default function Settings({ settings, setSettings, darkMode, setDarkMode 
       <h2>حریم خصوصی</h2>
       <p className="muted">اطلاعات برنامه در همین مرورگر ذخیره می‌شود. فایل‌های انتخابی مدارک نیز فقط به صورت محلی روی همین دستگاه نگهداری می‌شوند و به سرور ارسال نمی‌شوند.</p>
     </section>
-    <section className="card personal-note">
-      <strong>GermanyApp</strong>
-      <p className="muted">طراحی و شخصی‌سازی‌شده برای استفاده شخصی محمدرضا.</p>
-    </section>
   </>;
 }

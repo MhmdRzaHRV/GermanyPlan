@@ -37,6 +37,7 @@ function App() {
     <div className="app-shell">
       <Sidebar page={page} setPage={setPage} showTravel={data.settings.ticketBought} />
       <main className="main-content">{pages[page]}</main>
+      <footer className="app-footer">© 2026 Mohammad Reza · GermanyPlan</footer>
     </div>
   );
 }
