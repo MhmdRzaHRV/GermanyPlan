@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/GermanyPlan/static/css/main.21cfec5b.css",
-    "main.js": "/GermanyPlan/static/js/main.1e585dd3.js",
+    "main.css": "/GermanyPlan/static/css/main.e3cb7385.css",
+    "main.js": "/GermanyPlan/static/js/main.c50dad72.js",
     "index.html": "/GermanyPlan/index.html",
-    "main.21cfec5b.css.map": "/GermanyPlan/static/css/main.21cfec5b.css.map",
-    "main.1e585dd3.js.map": "/GermanyPlan/static/js/main.1e585dd3.js.map"
+    "main.e3cb7385.css.map": "/GermanyPlan/static/css/main.e3cb7385.css.map",
+    "main.c50dad72.js.map": "/GermanyPlan/static/js/main.c50dad72.js.map"
   },
   "entrypoints": [
-    "static/css/main.21cfec5b.css",
-    "static/js/main.1e585dd3.js"
+    "static/css/main.e3cb7385.css",
+    "static/js/main.c50dad72.js"
   ]
 }
