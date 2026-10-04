@@ -36,7 +36,9 @@ function App() {
   return (
     <div className="app-shell">
       <Sidebar page={page} setPage={setPage} showTravel={data.settings.ticketBought} />
-      <main className="main-content">{pages[page]}</main>
+      <main className="main-content">{pages[page]}
+        <footer className="app-footer">طراحی و توسعه توسط MhmdRza · 2026</footer>
+      </main>
     </div>
   );
 }
