@@ -38,17 +38,21 @@ export default function Packing({ packing, add, update, remove }) {
     <>
       <PageHeader title="وسایل" text="چیزهایی که باید همراهت باشند." />
       <form className="form-card inline-form">
-        <input value={name} onChange={(e) => setName(e.target.value)} placeholder="مثلاً داروهای شخصی" />
-        <select value={priority} onChange={(e) => setPriority(e.target.value)}>
-          <option value="required">واجب</option>
-          <option value="needed">مورد نیاز</option>
-        </select>
-        <input className="qty" type="number" min="1" value={qty} onChange={(e) => setQty(e.target.value)} />
-        <label className="check-inline">
-          <input type="checkbox" checked={bought} onChange={(e) => setBought(e.target.checked)} />
-          خریده شده
-        </label>
-        <button className="primary" onClick={submit}>{editing ? "ذخیره" : "افزودن"}</button>
+        <div className="form-row">
+          <input value={name} onChange={(e) => setName(e.target.value)} placeholder="مثلاً داروهای شخصی" />
+          <select value={priority} onChange={(e) => setPriority(e.target.value)}>
+            <option value="required">واجب</option>
+            <option value="needed">مورد نیاز</option>
+          </select>
+        </div>
+        <div className="form-row row-center">
+          <input className="qty" type="number" min="1" value={qty} onChange={(e) => setQty(e.target.value)} />
+          <label className="check-inline">
+            <input type="checkbox" checked={bought} onChange={(e) => setBought(e.target.checked)} />
+            خریده شده
+          </label>
+          <button className="primary" onClick={submit}>{editing ? "ذخیره" : "افزودن"}</button>
+        </div>
       </form>
       <div className="filters">
         {filters.map(([id, l]) => <button className={filter === id ? "selected" : ""} key={id} onClick={() => setFilter(id)}>{l}</button>)}

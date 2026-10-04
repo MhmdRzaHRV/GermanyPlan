@@ -1,7 +1,6 @@
 import { useState } from "react";
 import PageHeader from "./PageHeader";
-
-const fmt = (n) => Number(n).toLocaleString(undefined, { maximumFractionDigits: 2 });
+import { fmt, group, clean } from "../utils/format";
 
 export default function Finance({ finance, add, update, remove }) {
   const empty = { title: "", amount: "", currency: "EUR", rate: "", date: new Date().toISOString().slice(0, 10), category: "", details: "" };
@@ -31,12 +30,12 @@ export default function Finance({ finance, add, update, remove }) {
       <form className="form-card" onSubmit={submit}>
         <div className="form-row">
           <input value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} placeholder="عنوان هزینه" />
-          <input type="number" min="0" value={form.amount} onChange={(e) => setForm({ ...form, amount: e.target.value })} placeholder="مبلغ" />
+          <input inputMode="decimal" value={group(form.amount)} onChange={(e) => setForm({ ...form, amount: clean(e.target.value) })} placeholder="مبلغ" />
           <select value={form.currency} onChange={(e) => setForm({ ...form, currency: e.target.value })}>
             <option value="EUR">یورو (€)</option>
             <option value="IRR">ریال (﷼)</option>
           </select>
-          <input type="number" min="0" value={form.rate} onChange={(e) => setForm({ ...form, rate: e.target.value })} placeholder="نرخ یورو (ریال)" />
+          <input inputMode="decimal" value={group(form.rate)} onChange={(e) => setForm({ ...form, rate: clean(e.target.value) })} placeholder="نرخ یورو (ریال)" />
         </div>
         <div className="form-row">
           <input type="date" value={form.date} onChange={(e) => setForm({ ...form, date: e.target.value })} />
@@ -66,7 +65,7 @@ export default function Finance({ finance, add, update, remove }) {
               {x.details && <p>{x.details}</p>}
             </div>
             <div className="actions">
-              <button onClick={() => { setEditing(x.id); setForm({ ...empty, ...x, rate: x.rate || "" }); }}>ویرایش</button>
+              <button onClick={() => { setEditing(x.id); setForm({ ...empty, ...x, rate: x.rate ? String(x.rate) : "", amount: String(x.amount) }); }}>ویرایش</button>
               <button onClick={() => remove("finance", x.id)}>حذف</button>
             </div>
           </article>
